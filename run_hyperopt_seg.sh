@@ -21,7 +21,7 @@ sed -i "${opt_linenumber}c \ \ \ \ connect_string = \"mongo+ssh://$mongo_exec_ho
 
 result_linenumber=`cat -n get_result.py  | grep mongo+ssh | head -n 1 | awk '{print $1}'`
 sed -i "${result_linenumber}c \ \ \ \ connect_string = \"mongo+ssh://$mongo_exec_host:1234/foo_db/jobs\"" get_result.py
-bsub -R "select[hname!=asicskl03]" "python3 Seeker_bayes_seg.py -base_arch_file vpr_arch_wo_crossbar_gsb.xml -base_csv_file result_new_para.csv -parallel_number $parallel -exec_file /home/wllpro/llwang/yqwang/vtr-verilog-to-routing-patch-1/build/vpr/vpr -blif_dir /home/wllpro/llwang/yqwang/parellel_editing_alkaidT/blif_files -blif_names_file blif_list -same_trial_limit 1 > log.txt 2>&1" # log
+bsub -R "select[hname!=asicskl03]" "python3 Seeker_bayes_seg.py -base_arch_file alkaidT_vib.xml -base_csv_file result_new_para.csv -parallel_number $parallel -exec_file /home/wllpro/llwang/yqwang/vtr-verilog-to-routing-patch-1/build/vpr/vpr -blif_dir /home/wllpro/llwang/yqwang/parellel_editing_alkaidT/blif_files -blif_names_file blif_list -same_trial_limit 1 > log.txt 2>&1" # log
 
 
 # run hyperopt-mongo-worker
