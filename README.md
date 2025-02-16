@@ -12,6 +12,7 @@
  Install Hyperopt using pip:
  ```bash
  pip install hyperopt
+ ```
 
  After installation, verify that Hyperopt is installed correctly:
  ```bash
