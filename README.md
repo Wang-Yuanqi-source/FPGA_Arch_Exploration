@@ -32,3 +32,6 @@
  cd vtr
  make vpr
  ```
+ ## File Description
+ ``blif_files/`` consists of benchmarks in ``.blif`` format for VPR.
+ ``blif_list`` lists the circuits for architecture exploration evaluation. The circuits in ``blif_list`` should also contained in ``blif_files/``.
