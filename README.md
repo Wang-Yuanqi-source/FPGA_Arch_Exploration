@@ -25,4 +25,10 @@
  pip install pymongo
  ```
  ### VTR Installation
- VTR supported VIB architecture can be downloaded from [VTR4VIB](https://github.com/Wang-Yuanqi-source/vtr-verilog-to-routing/tree/patch-1). Install it in the ``vtr`` directory of this project.
+ VTR supported VIB architecture can be downloaded from [VTR4VIB](https://github.com/Wang-Yuanqi-source/vtr-verilog-to-routing/tree/patch-1). Install it in the ``vtr/`` directory of this project.
+
+ Install VTR：
+ ```bash
+ cd vtr
+ make vpr
+ ```
