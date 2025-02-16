@@ -48,7 +48,7 @@
  ## How to Use
  First, the user need to change the ``vpr_dir`` in ``run_hyperopt_seg.sh`` to the specific path of VPR. The value of ``parallel`` can be change to the number of parallel of the user.
  
- Then un exploration by:
+ Then run exploration by:
  ```bash
  ./run_hyperopt_seg.sh
  ```
