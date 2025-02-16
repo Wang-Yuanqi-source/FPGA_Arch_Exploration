@@ -7,6 +7,7 @@
  Hyperopt is a hyperparameter optimization framework using the Tree-structured Parzen Estimator (TPE), a prominent Bayesian Optimization variant. It supports exploration in parallel.
 
  ## Requirements
+ ### Hyperopt Installation
  Hyperopt is needed for Bayesian Optimization and parallel exploration.
 
  Install Hyperopt using pip:
@@ -17,7 +18,9 @@
  After installation, verify that Hyperopt is installed correctly:
  ```bash
  python -c "import hyperopt; print(hyperopt.__version__)"
+ ```
 
  Install MongoDB Dependency：
  ```bash
  pip install pymongo
+ ```
