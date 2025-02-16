@@ -34,4 +34,23 @@
  ```
  ## File Description
  ``blif_files/`` consists of benchmarks in ``.blif`` format for VPR.
+ 
  ``blif_list`` lists the circuits for architecture exploration evaluation. The circuits in ``blif_list`` should also contained in ``blif_files/``.
+
+ ``baseline_result.csv`` cantains the baseline data such as routing area and critical path delay for each circuit.
+
+ ``alkaidT_vib.xml`` is the baseline architecture. The exploration is based on it.
+
+ ``Seeker_bayes_seg.py`` is the main document of the exploration. Various wire types and VIB parameters combinations are generated via Bayesian Optimization and then converted to new architecture description files (.xml). VPR evaluates the routing area and critical path delay of the architectures for exploration iteratively. The optimization goal is the area delay product (ADP) here. ``get_info.sh`` is embedded to get the value of area and delay from vpr log file.
+
+ ``run_hyperopt_seg.sh`` is the interface of the project. The information of the exploration is saved in ``log.txt`` and ``logfile.txt`` (rough and detailed).
+
+ ## How to Use
+ First, 
+ Run exploration by:
+ ```bash
+ ./run_hyperopt_seg.sh
+ ```
+
+ 
+
