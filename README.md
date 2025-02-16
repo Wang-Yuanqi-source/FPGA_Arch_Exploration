@@ -46,12 +46,19 @@
  ``run_hyperopt_seg.sh`` is the interface of the project. The information of the exploration is saved in ``log.txt`` and ``logfile.txt`` (rough and detailed).
 
  ## How to Use
- First, the user need to change the ``vprdir`` in ``run_hyperopt_seg.sh`` to the specific path of VPR.
+ First, the user need to change the ``vpr_dir`` in ``run_hyperopt_seg.sh`` to the specific path of VPR. The value of ``parallel`` can be change to the number of parallel of the user.
  
- Run exploration by:
+ Then un exploration by:
  ```bash
  ./run_hyperopt_seg.sh
  ```
 
+ A folder named ``workdir`` is newly created and cantains new-generated architectures and their results.
+
+ If the user wants to get the top 10 architectures, just run:
+ ```bash
+ python3 get_result.py > best_archs.txt
+ ```
+ The detailed results for each circuit implemented on each FPGA architecture will be listed in ``best_archs.txt``.
  
 
