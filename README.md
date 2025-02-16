@@ -61,4 +61,5 @@
  ```
  The detailed results for each circuit implemented on each FPGA architecture will be listed in ``best_archs.txt``.
  
-
+ ## Results
+ ``results`` folder contains the top 10 best FPGA architectures and their area, delay and ADP results for "alkaidT" arch exploration. The area, delay and ADP improvement compared to the baseline architecture can reach 20.06%, 11.58% and 29.32% respectively. The detailed data for the 10 archs can be found in ``result.csv``.
