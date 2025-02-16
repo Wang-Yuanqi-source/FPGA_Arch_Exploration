@@ -46,7 +46,8 @@
  ``run_hyperopt_seg.sh`` is the interface of the project. The information of the exploration is saved in ``log.txt`` and ``logfile.txt`` (rough and detailed).
 
  ## How to Use
- First, 
+ First, the user need to change the ``vprdir`` in ``run_hyperopt_seg.sh`` to the specific path of VPR.
+ 
  Run exploration by:
  ```bash
  ./run_hyperopt_seg.sh
