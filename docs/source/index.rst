@@ -16,6 +16,7 @@ Welcome to FPGA_Arch_Exploration's documentation!
    hyperopt
    exploration_platform
    experimental_results
+   analysis
 
 Indices and tables
 ==================
