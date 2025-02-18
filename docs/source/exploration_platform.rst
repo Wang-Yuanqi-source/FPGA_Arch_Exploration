@@ -7,7 +7,7 @@ The architecture exploration platform is based on the baseline architecture, imp
     :align: center 
     :height: 300
     
-Figure 1. The pseudocode for the upgraded exploration platform.
+    Figure 1. The pseudocode for the upgraded exploration platform.
 
 First, the algorithm takes the existing Baseline architecture A, a set of benchmarks, and the search space as inputs. After the algorithm starts running, it first executes the `Run_Baseline()` function to evaluate the performance of the Baseline architecture A under the given benchmark set, recording corresponding parameters such as area and critical path delay.
 
