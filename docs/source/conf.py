@@ -46,7 +46,7 @@ latex_elements = {
     'figure_align': 'htbp',  # 图片对齐方式
   'preamble': r'''
         \documentclass[12pt]{article}  # Ensure the document class has the correct font size
-        \renewcommand{\normalsize}{\fontsize{14}{16}\selectfont}  # Force the normal font size
+        \renewcommand{\normalsize}{\fontsize{50}{50}\selectfont}  # Force the normal font size
     '''
 }
 
