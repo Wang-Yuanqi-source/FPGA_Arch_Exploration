@@ -47,7 +47,7 @@ The best 10 architectures compared to the baseline are shown in Figure 1.
     :align: center 
     :height: 300
     
-Figure 1. The best 10 archs.
+    Figure 1. The best 10 archs.
     
 In Figure 1, `Delay Imp` refers to the percentage reduction in critical path delay, `Area Imp` refers to the percentage reduction in routing area, and `ADP Imp` refers to the percentage reduction in area-delay product.
 The Arch name m_n represents the n-th architecture generated in the m-th thread.
@@ -58,7 +58,7 @@ The distribution of various line types for these ten architectures is shown in F
     :align: center 
     :height: 300
     
-Figure 2. The wire distribution of ten architectures.
+    Figure 2. The wire distribution of ten architectures.
     
 In the parentheses in Figure 2, U and D represent counterclockwise and clockwise bends, respectively. Besides, The numbers in parentheses represent the position of the bend.
 
@@ -68,13 +68,13 @@ The information for each benchmark circuit implemented by the two optimal archit
     :align: center 
     :height: 300
     
-Figure 3. The detailed results of architecture 15_18.
+    Figure 3. The detailed results of architecture 15_18.
     
 .. figure:: Images/arch2_result.png
     :align: center 
     :height: 300
     
-Figure 4. The detailed results of architecture 27_11.
+    Figure 4. The detailed results of architecture 27_11.
 
 
 
