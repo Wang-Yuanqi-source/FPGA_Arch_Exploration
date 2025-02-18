@@ -31,4 +31,4 @@ Figure 1 is a schematic diagram of the parallelization principle in Hyperopt. Mo
     :align: center 
     :height: 300
     
-Figure 1. Schematic diagram of the parallelization principle in Hyperopt.
+    Figure 1. Schematic diagram of the parallelization principle in Hyperopt.
