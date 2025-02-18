@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Exploration Platform Based on Bayesian Optimization &#8212; FPGA_Arch_Exploration  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Experimental Results" href="experimental_results.html" />
+    <link rel="prev" title="Hyperopt Package" href="hyperopt.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="exploration-platform-based-on-bayesian-optimization">
+<h1>Exploration Platform Based on Bayesian Optimization<a class="headerlink" href="#exploration-platform-based-on-bayesian-optimization" title="Permalink to this headline">¶</a></h1>
+<p>The architecture exploration platform is based on the baseline architecture, improved to the VIB architecture, and aims to search for interconnection architectures with better performance (such as area, latency, etc.). To enhance optimization efficiency, the exploration platform has built a parallel Bayesian optimization FPGA interconnection architecture exploration platform based on Hyperopt. Starting from the initial solution, the platform repeatedly performs the process of “generating new solutions → calculating objective function differences → using Bayesian optimization to recommend multiple search points” on the data in MongoDB, until the objective function converges or the requirements are met. In this process, Hyperopt’s parallelization support is achieved through the MongoDB database, enabling result storage and communication between different threads, thereby improving optimization efficiency.The pseudocode for the upgraded exploration platform is shown in Figure 1.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/exploration_platform.png"><img alt="_images/exploration_platform.png" src="_images/exploration_platform.png" style="height: 300px;" /></a>
+</figure>
+<p>Figure 1. The pseudocode for the upgraded exploration platform.</p>
+<p>First, the algorithm takes the existing Baseline architecture A, a set of benchmarks, and the search space as inputs. After the algorithm starts running, it first executes the <cite>Run_Baseline()</cite> function to evaluate the performance of the Baseline architecture A under the given benchmark set, recording corresponding parameters such as area and critical path delay.</p>
+<p>Next, the MongoDB database is initialized for future use. The exploration platform then randomly modifies the Baseline architecture based on the search space, generating multiple architectural variants (Arch). The <cite>Hyperopt_Parall_Evaluate_Cost()</cite> function then calls VPR to perform parallel layout and routing of the generated interconnection architectures using the given benchmark set, obtaining average critical path and area information. MongoDB stores the parameters corresponding to each Arch and its benchmark results, preparing for the first inference of Bayesian optimization.</p>
+<p>The Bayesian inference is based on the existing data in MongoDB, modeling the objective function and simultaneously recommending multiple points for evaluation. The evaluation criterion is to minimize the area-delay product.</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">FPGA_Arch_Exploration</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vib_architecture.html">VIB Interconnect Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bayesian_optimization.html">Bayesian Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hyperopt.html">Hyperopt Package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Exploration Platform Based on Bayesian Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="experimental_results.html">Experimental Results</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="hyperopt.html" title="previous chapter">Hyperopt Package</a></li>
+      <li>Next: <a href="experimental_results.html" title="next chapter">Experimental Results</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2025, Yuanqi Wang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/exploration_platform.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

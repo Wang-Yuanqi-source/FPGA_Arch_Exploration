@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Hyperopt Package &#8212; FPGA_Arch_Exploration  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exploration Platform Based on Bayesian Optimization" href="exploration_platform.html" />
+    <link rel="prev" title="Bayesian Optimization" href="bayesian_optimization.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="hyperopt-package">
+<h1>Hyperopt Package<a class="headerlink" href="#hyperopt-package" title="Permalink to this headline">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Hyperopt is a distributed Bayesian optimization Python library for hyperparameter optimization, developed by James Bergstra. It can optimize optimization problems with hundreds of parameters over a wide range. Hyperopt supports a variety of parameter types, which are explained as follows:</p>
+<ul class="simple">
+<li><p><strong>hp.choice(label, options)</strong>: Returns one element from <cite>options</cite>, which can be a list or tuple. <cite>options</cite> also supports conditional parameters, where different options may have different subspaces.</p></li>
+<li><p><strong>hp.randint(label, upper)</strong>: Returns an integer within the range [0, upper). Compared to <strong>hp.quniform(label, low, high, q)</strong>, this is more suitable when the parameter values are not correlated, meaning the function is not smooth.</p></li>
+<li><p><strong>hp.uniform(label, low, high)</strong>: Returns a value uniformly distributed between <cite>low</cite> and <cite>high</cite>.</p></li>
+<li><p><strong>hp.quniform(label, low, high, q)</strong>: Returns an integer that is <cite>round(uniform(low, high) / q) * q</cite>. Compared to <strong>hp.randint(label, upper)</strong>, this is more suitable for cases where the objective function is smooth.</p></li>
+<li><p><strong>hp.loguniform(label, low, high)</strong>: Returns <cite>exp(uniform(low, high))</cite>, which applies a logarithmic transformation to the uniformly distributed variable.</p></li>
+<li><p><strong>hp.qloguniform(label, low, high, q)</strong>: Returns <cite>round(exp(uniform(low, high)) / q) * q</cite>.</p></li>
+<li><p><strong>hp.normal(label, mu, sigma)</strong>: Returns a value from a normal distribution with mean <cite>mu</cite> and standard deviation <cite>sigma</cite>, suitable for cases where you want to search around certain values.</p></li>
+</ul>
+<p>These are some of the more commonly used parameter types in Hyperopt. In addition, there are less commonly used types such as <strong>hp.qnormal(label, mu, sigma, q)</strong>, <strong>hp.lognormal(label, mu, sigma)</strong>, and <strong>hp.qlognormal(label, mu, sigma, q)</strong>. For specific details, please refer to the Hyperopt documentation.</p>
+</section>
+<section id="parallelization-support">
+<h2>Parallelization support<a class="headerlink" href="#parallelization-support" title="Permalink to this headline">¶</a></h2>
+<p>Conventional Bayesian Optimization uses a sequential optimization algorithm, which cannot be parallelized. However, due to the inefficiency of serial Bayesian optimization, researchers have developed a series of parallelization methods. The key challenge is recommending multiple exploration points at once through the acquisition function in Bayesian optimization. Hyperopt has built-in support for parallelization and enables result storage and communication between different threads through the MongoDB database.</p>
+<p>Figure 1 is a schematic diagram of the parallelization principle in Hyperopt. MongoDB is an open-source database system written in C++ that is based on distributed file storage. Similar to JSON objects, MongoDB stores data as documents, with the data structure consisting of key-value pairs. Field values can contain other documents, arrays, and arrays of documents. Centered around MongoDB, Hyperopt stores the optimization results and the parameter combinations recommended by the acquisition function in MongoDB. It communicates asynchronously with the workers responsible for the actual evaluation processes.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/mongodb.png"><img alt="_images/mongodb.png" src="_images/mongodb.png" style="height: 300px;" /></a>
+</figure>
+<p>Figure 1. Schematic diagram of the parallelization principle in Hyperopt.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">FPGA_Arch_Exploration</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vib_architecture.html">VIB Interconnect Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bayesian_optimization.html">Bayesian Optimization</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Hyperopt Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parallelization-support">Parallelization support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exploration_platform.html">Exploration Platform Based on Bayesian Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="experimental_results.html">Experimental Results</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="bayesian_optimization.html" title="previous chapter">Bayesian Optimization</a></li>
+      <li>Next: <a href="exploration_platform.html" title="next chapter">Exploration Platform Based on Bayesian Optimization</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2025, Yuanqi Wang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/hyperopt.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
