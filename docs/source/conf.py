@@ -41,7 +41,7 @@ extensions = [
 latex_engine = 'pdflatex'  # 使用 pdflatex
 latex_elements = {
     'papersize': 'a4paper',  # 纸张大小
-    'pointsize': '18pt',     # 字体大小
+    'pointsize': '28pt',     # 字体大小
     'preamble': '',          # LaTeX 前置代码
     'figure_align': 'htbp',  # 图片对齐方式
 }
