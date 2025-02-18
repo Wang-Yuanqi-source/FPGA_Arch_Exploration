@@ -49,7 +49,6 @@ latex_elements = {
         \subsectionfont{\fontsize{120}{130}\selectfont}
         \subsubsectionfont{\fontsize{110}{120}\selectfont}
     ''',
-    'preamble': '',          # LaTeX 前置代码
     'figure_align': 'htbp',  # 图片对齐方式
 }
 
