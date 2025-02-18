@@ -44,6 +44,10 @@ latex_elements = {
     'pointsize': '100pt',     # 字体大小
     'preamble': '',          # LaTeX 前置代码
     'figure_align': 'htbp',  # 图片对齐方式
+  'preamble': r'''
+        \documentclass[12pt]{article}  # Ensure the document class has the correct font size
+        \renewcommand{\normalsize}{\fontsize{14}{16}\selectfont}  # Force the normal font size
+    '''
 }
 
 # Add any paths that contain templates here, relative to this directory.
