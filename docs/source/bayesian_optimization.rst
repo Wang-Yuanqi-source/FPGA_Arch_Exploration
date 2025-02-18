@@ -9,7 +9,7 @@ Figure 1 shows an experimental diagram of the iterative process of one-dimension
     :align: center 
     :height: 300
     
-Figure 1. Schematic diagram of the Bayesian Optimization process.
+    Figure 1. Schematic diagram of the Bayesian Optimization process.
     
 The core of the Bayesian optimization algorithm consists of two parts: (1) modeling the objective function, which involves calculating the mean and variance of the function values at each point, typically implemented using Gaussian process regression; (2) constructing the acquisition function, which is used to decide at which point to sample during the current iteration.
 
@@ -19,4 +19,4 @@ Figure 2 illustrates the basic flow of the Bayesian optimization algorithm. As s
     :align: center 
     :height: 300
     
-Figure 2. The pseudocode of Bayesian optimization.
+    Figure 2. The pseudocode of Bayesian optimization.
