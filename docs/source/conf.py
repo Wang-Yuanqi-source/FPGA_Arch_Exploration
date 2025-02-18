@@ -28,7 +28,23 @@ author = 'Yuanqi Wang'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+  'sphinx.ext.autodoc',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.todo',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.githubpages',
+    'sphinx.ext.imgmath', 
 ]
+
+latex_engine = 'pdflatex'  # 使用 pdflatex
+latex_elements = {
+    'papersize': 'a4paper',  # 纸张大小
+    'pointsize': '10pt',     # 字体大小
+    'preamble': '',          # LaTeX 前置代码
+    'figure_align': 'htbp',  # 图片对齐方式
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
