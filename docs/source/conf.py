@@ -42,13 +42,17 @@ latex_engine = 'pdflatex'  # 使用 pdflatex
 latex_elements = {
     'papersize': 'a4paper',  # 纸张大小
     'pointsize': '100pt',     # 字体大小
+  'extraclassoptions': ',fleqn',  # 其他选项（可选）
+    'classoptions': ',a4paper,100pt',  # 直接传递参数给文档类
   'preamble': r'''
-        \usepackage{anyfontsize}
-        \usepackage{sectsty}
-        \sectionfont{\fontsize{140}{150}\selectfont}
-        \subsectionfont{\fontsize{120}{130}\selectfont}
-        \subsubsectionfont{\fontsize{110}{120}\selectfont}
-    ''',
+    \usepackage{titlesec}
+    \titleformat*{\section}{\Huge\bfseries}
+    \titleformat*{\subsection}{\Large\bfseries}
+    \titleformat*{\subsubsection}{\large\bfseries}
+    % 调整正文基础字体大小
+    \usepackage{anyfontsize}
+    \fontsize{100}{120}\selectfont
+''',
     'figure_align': 'htbp',  # 图片对齐方式
 }
 
