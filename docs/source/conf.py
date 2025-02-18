@@ -37,23 +37,22 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx.ext.imgmath', 
 ]
-imgmath_font_size = 12
+
 latex_engine = 'pdflatex'  # 使用 pdflatex
 latex_elements = {
-    'papersize': 'a4paper',  # 纸张大小
-    'pointsize': '100pt',     # 字体大小
-  'extraclassoptions': ',fleqn',  # 其他选项（可选）
-    'classoptions': ',a4paper,100pt',  # 直接传递参数给文档类
-  'preamble': r'''
-    \usepackage{titlesec}
-    \titleformat*{\section}{\Huge\bfseries}
-    \titleformat*{\subsection}{\Large\bfseries}
-    \titleformat*{\subsubsection}{\large\bfseries}
-    % 调整正文基础字体大小
-    \usepackage{anyfontsize}
-    \fontsize{100}{120}\selectfont
-''',
-    'figure_align': 'htbp',  # 图片对齐方式
+    'papersize': 'a4paper',
+    'pointsize': '100pt',
+    'classoptions': ',a4paper,100pt',
+    'docclass': 'article',
+    'preamble': r'''
+        \usepackage{titlesec}
+        \titleformat*{\section}{\Huge\bfseries}
+        \titleformat*{\subsection}{\Large\bfseries}
+        \titleformat*{\subsubsection}{\large\bfseries}
+        \usepackage{anyfontsize}
+        \fontsize{100}{120}\selectfont
+    ''',
+    'figure_align': 'htbp',
 }
 
 # Add any paths that contain templates here, relative to this directory.
