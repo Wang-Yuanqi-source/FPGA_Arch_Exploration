@@ -37,17 +37,20 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx.ext.imgmath', 
 ]
-
+imgmath_font_size = 12
 latex_engine = 'pdflatex'  # 使用 pdflatex
 latex_elements = {
     'papersize': 'a4paper',  # 纸张大小
     'pointsize': '100pt',     # 字体大小
+  'preamble': r'''
+        \usepackage{anyfontsize}
+        \usepackage{sectsty}
+        \sectionfont{\fontsize{140}{150}\selectfont}
+        \subsectionfont{\fontsize{120}{130}\selectfont}
+        \subsubsectionfont{\fontsize{110}{120}\selectfont}
+    ''',
     'preamble': '',          # LaTeX 前置代码
     'figure_align': 'htbp',  # 图片对齐方式
-  'preamble': r'''
-        \documentclass[12pt]{article}  # Ensure the document class has the correct font size
-        \renewcommand{\normalsize}{\fontsize{50}{50}\selectfont}  # Force the normal font size
-    '''
 }
 
 # Add any paths that contain templates here, relative to this directory.
