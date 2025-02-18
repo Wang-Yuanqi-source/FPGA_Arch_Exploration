@@ -1,0 +1,24 @@
+Job <926631> is submitted to default queue <normal>.
+<<Waiting for dispatch ...>>
+<<Starting on asicskl08>>
+nohup bsub -I python GAT_inst_new.py --lr 0.001 --decay 0.001 --neurons 256 --batch 32 --num_layers 2 --conv_type SAGE > ".out" 2> ".err" &
+nohup bsub -I python GAT_inst_new.py --lr 0.001 --decay 0.001 --neurons 256 --batch 32 --num_layers 3 --conv_type SAGE > ".out" 2> ".err" &
+nohup bsub -I python GAT_inst_new.py --lr 0.001 --decay 0.001 --neurons 256 --batch 64 --num_layers 2 --conv_type SAGE > ".out" 2> ".err" &
+nohup bsub -I python GAT_inst_new.py --lr 0.001 --decay 0.001 --neurons 256 --batch 64 --num_layers 3 --conv_type SAGE > ".out" 2> ".err" &
+nohup bsub -I python GAT_inst_new.py --lr 0.0008 --decay 0.001 --neurons 256 --batch 32 --num_layers 2 --conv_type SAGE > ".out" 2> ".err" &
+nohup bsub -I python GAT_inst_new.py --lr 0.0008 --decay 0.001 --neurons 256 --batch 32 --num_layers 3 --conv_type SAGE > ".out" 2> ".err" &
+nohup bsub -I python GAT_inst_new.py --lr 0.0008 --decay 0.001 --neurons 256 --batch 64 --num_layers 2 --conv_type SAGE > ".out" 2> ".err" &
+nohup bsub -I python GAT_inst_new.py --lr 0.0008 --decay 0.001 --neurons 256 --batch 64 --num_layers 3 --conv_type SAGE > ".out" 2> ".err" &
+All jobs have been submitted.
+Job <926868> is submitted to default queue <normal>.
+<<Waiting for dispatch ...>>
+<<Starting on asicskl14>>
+nohup bsub -I python GAT_inst_new.py --lr 0.001 --decay 0.001 --neurons 256 --batch 32 --num_layers 2 --conv_type SAGE > ".out" 2> ".err" &
+nohup bsub -I python GAT_inst_new.py --lr 0.001 --decay 0.001 --neurons 256 --batch 32 --num_layers 3 --conv_type SAGE > ".out" 2> ".err" &
+nohup bsub -I python GAT_inst_new.py --lr 0.001 --decay 0.001 --neurons 256 --batch 64 --num_layers 2 --conv_type SAGE > ".out" 2> ".err" &
+nohup bsub -I python GAT_inst_new.py --lr 0.001 --decay 0.001 --neurons 256 --batch 64 --num_layers 3 --conv_type SAGE > ".out" 2> ".err" &
+nohup bsub -I python GAT_inst_new.py --lr 0.0008 --decay 0.001 --neurons 256 --batch 32 --num_layers 2 --conv_type SAGE > ".out" 2> ".err" &
+nohup bsub -I python GAT_inst_new.py --lr 0.0008 --decay 0.001 --neurons 256 --batch 32 --num_layers 3 --conv_type SAGE > ".out" 2> ".err" &
+nohup bsub -I python GAT_inst_new.py --lr 0.0008 --decay 0.001 --neurons 256 --batch 64 --num_layers 2 --conv_type SAGE > ".out" 2> ".err" &
+nohup bsub -I python GAT_inst_new.py --lr 0.0008 --decay 0.001 --neurons 256 --batch 64 --num_layers 3 --conv_type SAGE > ".out" 2> ".err" &
+All jobs have been submitted.
