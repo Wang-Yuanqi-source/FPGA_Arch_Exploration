@@ -11,16 +11,16 @@ Figure 1 shows the proposed VIB architecture which is tile-based. Each tile is c
     :align: center 
     :height: 300
     
-Figure 1. VIB architecture. The connections between the inputs and outputs of the LB and the routing wires are all implemented within the VIB.
+    Figure 1. VIB architecture. The connections between the inputs and outputs of the LB and the routing wires are all implemented within the VIB.
 
 .. figure:: Images/double-level.png
     :align: center
     
-Figure 2. Double-level MUX topology.
+    Figure 2. Double-level MUX topology.
 
 Figure 3 shows the modeling for bent wires. A bent L-length wire is modeled as two segments in CHANX and CHANY respectively connected by a delayless switch. The orange and red arrows represent conterclockwise and clockwise bent wires respectively. The bent wires can connect to both bent and straight wire segments.
     
 .. figure:: Images/bent_wires.png
     :align: center
     
-Figure 3. Presentation for bent wires.
+    Figure 3. Presentation for bent wires.
